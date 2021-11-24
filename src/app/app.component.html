@@ -1,11 +1,6 @@
 <mat-toolbar color="primary">
   <span>Amazing Calc</span>
   <span class="spacer"></span>
-  <a>Basic</a>
+  <a mat-button routerLink="/">Basic calc</a>
 </mat-toolbar>
-<div>
-  <mat-form-field appearance="outline">
-    <mat-label>Addend 1</mat-label>
-    <input type="number" matInput>
-  </mat-form-field>
-</div>
+<router-outlet></router-outlet>
