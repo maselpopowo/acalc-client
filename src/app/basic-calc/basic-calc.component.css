@@ -1,5 +1,8 @@
 .page {
   padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .title {
@@ -7,3 +10,26 @@
   color: white;
   padding: 15px;
 }
+
+.content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
+}
+
+.basic-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-field {
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+}
+

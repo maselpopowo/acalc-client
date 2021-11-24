@@ -5,18 +5,25 @@
       <span class="spacer"></span>
     </div>
     <div class="content">
-      <form>
-        <mat-form-field appearance="outline">
+      <form [formGroup]="form" class="basic-form">
+        <mat-form-field appearance="outline" class="first-field">
           <mat-label>Addend 1</mat-label>
-          <input type="number" matInput>
+          <input type="number" matInput formControlName="addend1" required>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Addend 1</mat-label>
-          <input type="number" matInput>
+          <input type="number" matInput formControlName="addend2" required>
         </mat-form-field>
-        <button mat-raised-button color="primary">ADD</button>
+        <span class="spacer"></span>
+        <mat-form-field appearance="outline" class="result-field">
+          <mat-label>Result</mat-label>
+          <input type="number" matInput readonly formControlName="result">
+        </mat-form-field>
       </form>
-
+      <div class="actions">
+        <span class="spacer"></span>
+        <button mat-raised-button color="primary" (click)="add()">ADD</button>
+      </div>
     </div>
   </div>
 </div>
