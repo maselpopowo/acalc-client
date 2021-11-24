@@ -1,4 +1,4 @@
 export interface Operation {
-  a: number,
-  b: number
+  a: string,
+  b: string
 }

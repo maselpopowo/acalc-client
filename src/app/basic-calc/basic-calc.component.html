@@ -30,7 +30,7 @@
           </div>
         </div>
       </mat-tab>
-      <mat-tab label="Substraction">
+      <mat-tab label="Subtraction">
         <div class="content">
           <form [formGroup]="subtractForm" class="basic-form">
             <mat-form-field appearance="outline" class="first-field">
@@ -51,6 +51,31 @@
             <span class="spacer"></span>
             <button mat-raised-button color="primary" [disabled]="subtractForm.invalid"
                     (click)="subtract()">SUBTRACT
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Division">
+        <div class="content">
+          <form [formGroup]="divisionForm" class="basic-form">
+            <mat-form-field appearance="outline" class="first-field">
+              <mat-label>Dividend</mat-label>
+              <input type="number" matInput formControlName="a" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Divisor</mat-label>
+              <input type="number" matInput formControlName="b" required>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <mat-form-field appearance="outline" class="result-field">
+              <mat-label>Result</mat-label>
+              <input type="text" matInput readonly formControlName="result">
+            </mat-form-field>
+          </form>
+          <div class="actions">
+            <span class="spacer"></span>
+            <button mat-raised-button color="primary" [disabled]="divisionForm.invalid"
+                    (click)="divide()">SUBTRACT
             </button>
           </div>
         </div>

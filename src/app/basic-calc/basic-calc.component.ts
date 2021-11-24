@@ -21,6 +21,12 @@ export class BasicCalcComponent implements OnInit {
     result: new FormControl()
   })
 
+  divisionForm = new FormGroup({
+    a: new FormControl(),
+    b: new FormControl(),
+    result: new FormControl()
+  })
+
   constructor(private service: BasicCalcService) {
   }
 
@@ -39,6 +45,13 @@ export class BasicCalcComponent implements OnInit {
     const {a, b} = this.subtractForm.value;
     this.service.subtract({a, b}).subscribe(value => {
       this.subtractForm.controls.result.setValue(value);
+    })
+  }
+
+  divide() {
+    const {a, b} = this.divisionForm.value;
+    this.service.divide({a, b}).subscribe(value => {
+      this.divisionForm.controls.result.setValue(value);
     })
   }
 
