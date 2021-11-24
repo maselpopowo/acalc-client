@@ -11,11 +11,14 @@
   padding: 15px;
 }
 
+.container {
+  min-width: 700px;
+}
+
 .content {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  min-width: 700px;
 }
 
 .basic-form {

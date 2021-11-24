@@ -19,4 +19,11 @@ export class BasicCalcService {
         map(result => result.value)
       )
   }
+
+  subtract(operation: Operation): Observable<number> {
+    return this.http.post<Result>('http://localhost:8080/api/v1/subtract', operation)
+      .pipe(
+        map(result => result.value)
+      )
+  }
 }

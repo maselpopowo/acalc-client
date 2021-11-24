@@ -4,26 +4,57 @@
       <span>Basic Calc</span>
       <span class="spacer"></span>
     </div>
-    <div class="content">
-      <form [formGroup]="form" class="basic-form">
-        <mat-form-field appearance="outline" class="first-field">
-          <mat-label>Addend 1</mat-label>
-          <input type="number" matInput formControlName="addend1" required>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Addend 1</mat-label>
-          <input type="number" matInput formControlName="addend2" required>
-        </mat-form-field>
-        <span class="spacer"></span>
-        <mat-form-field appearance="outline" class="result-field">
-          <mat-label>Result</mat-label>
-          <input type="number" matInput readonly formControlName="result">
-        </mat-form-field>
-      </form>
-      <div class="actions">
-        <span class="spacer"></span>
-        <button mat-raised-button color="primary" (click)="add()">ADD</button>
-      </div>
-    </div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summing">
+        <div class="content">
+          <form [formGroup]="sumForm" class="basic-form">
+            <mat-form-field appearance="outline" class="first-field">
+              <mat-label>Addend 1</mat-label>
+              <input type="number" matInput formControlName="a" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Addend 1</mat-label>
+              <input type="number" matInput formControlName="b" required>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <mat-form-field appearance="outline" class="result-field">
+              <mat-label>Result</mat-label>
+              <input type="number" matInput readonly formControlName="result">
+            </mat-form-field>
+          </form>
+          <div class="actions">
+            <span class="spacer"></span>
+            <button mat-raised-button color="primary" [disabled]="sumForm.invalid"
+                    (click)="add()">ADD
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Substraction">
+        <div class="content">
+          <form [formGroup]="subtractForm" class="basic-form">
+            <mat-form-field appearance="outline" class="first-field">
+              <mat-label>Minuend</mat-label>
+              <input type="number" matInput formControlName="a" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Subtrahend</mat-label>
+              <input type="number" matInput formControlName="b" required>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <mat-form-field appearance="outline" class="result-field">
+              <mat-label>Result</mat-label>
+              <input type="number" matInput readonly formControlName="result">
+            </mat-form-field>
+          </form>
+          <div class="actions">
+            <span class="spacer"></span>
+            <button mat-raised-button color="primary" [disabled]="subtractForm.invalid"
+                    (click)="subtract()">SUBTRACT
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

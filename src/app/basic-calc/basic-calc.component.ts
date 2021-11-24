@@ -9,14 +9,19 @@ import { BasicCalcService } from './basic-calc.service';
 })
 export class BasicCalcComponent implements OnInit {
 
-  form = new FormGroup({
-    addend1: new FormControl(),
-    addend2: new FormControl(),
+  sumForm = new FormGroup({
+    a: new FormControl(),
+    b: new FormControl(),
+    result: new FormControl()
+  })
+
+  subtractForm = new FormGroup({
+    a: new FormControl(),
+    b: new FormControl(),
     result: new FormControl()
   })
 
   constructor(private service: BasicCalcService) {
-
   }
 
 
@@ -24,9 +29,16 @@ export class BasicCalcComponent implements OnInit {
   }
 
   add() {
-    const {addend1, addend2} = this.form.value;
-    this.service.add({addend1, addend2}).subscribe(value => {
-      this.form.controls.result.setValue(value);
+    const {a, b} = this.sumForm.value;
+    this.service.add({a, b}).subscribe(value => {
+      this.sumForm.controls.result.setValue(value);
+    })
+  }
+
+  subtract() {
+    const {a, b} = this.subtractForm.value;
+    this.service.subtract({a, b}).subscribe(value => {
+      this.subtractForm.controls.result.setValue(value);
     })
   }
 
