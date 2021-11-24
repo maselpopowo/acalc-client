@@ -33,4 +33,11 @@ export class BasicCalcService {
         map(result => Number.parseFloat(result.value).toFixed(2)),
       )
   }
+
+  multiply(operation: Operation): Observable<string> {
+    return this.http.post<Result>('http://localhost:8080/api/v1/multiply', operation)
+      .pipe(
+        map(result => Number.parseFloat(result.value).toFixed(2)),
+      )
+  }
 }

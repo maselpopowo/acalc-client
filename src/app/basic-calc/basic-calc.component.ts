@@ -27,6 +27,12 @@ export class BasicCalcComponent implements OnInit {
     result: new FormControl()
   })
 
+  multiplicationForm = new FormGroup({
+    a: new FormControl(),
+    b: new FormControl(),
+    result: new FormControl()
+  })
+
   constructor(private service: BasicCalcService) {
   }
 
@@ -52,6 +58,13 @@ export class BasicCalcComponent implements OnInit {
     const {a, b} = this.divisionForm.value;
     this.service.divide({a, b}).subscribe(value => {
       this.divisionForm.controls.result.setValue(value);
+    })
+  }
+
+  multiply() {
+    const {a, b} = this.multiplicationForm.value;
+    this.service.multiply({a, b}).subscribe(value => {
+      this.multiplicationForm.controls.result.setValue(value);
     })
   }
 

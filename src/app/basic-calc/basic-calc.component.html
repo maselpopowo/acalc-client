@@ -75,7 +75,32 @@
           <div class="actions">
             <span class="spacer"></span>
             <button mat-raised-button color="primary" [disabled]="divisionForm.invalid"
-                    (click)="divide()">SUBTRACT
+                    (click)="divide()">DIVIDE
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Multiplication">
+        <div class="content">
+          <form [formGroup]="multiplicationForm" class="basic-form">
+            <mat-form-field appearance="outline" class="first-field">
+              <mat-label>Multiplicand</mat-label>
+              <input type="number" matInput formControlName="a" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Multiplier</mat-label>
+              <input type="number" matInput formControlName="b" required>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <mat-form-field appearance="outline" class="result-field">
+              <mat-label>Result</mat-label>
+              <input type="text" matInput readonly formControlName="result">
+            </mat-form-field>
+          </form>
+          <div class="actions">
+            <span class="spacer"></span>
+            <button mat-raised-button color="primary" [disabled]="multiplicationForm.invalid"
+                    (click)="multiply()">MULTIPLY
             </button>
           </div>
         </div>
