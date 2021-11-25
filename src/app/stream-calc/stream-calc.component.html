@@ -1,0 +1,16 @@
+<div class="page">
+    <div class="container mat-elevation-z10">
+      <div class="title">
+        <span>Stream Calc</span>
+        <span class="spacer"></span>
+      </div>
+    <div class="content">
+        <mat-form-field appearance="outline" class="result-field">
+            <mat-label>Item</mat-label>
+            <input type="number" matInput [formControl]="name" (keydown.enter)="add()">
+          </mat-form-field>
+          <span class="spacer"></span>
+          <p> Result: {{ result }}</p>
+    </div>      
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+.page {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .title {
+    background-color: #3f51b5;
+    color: white;
+    padding: 15px;
+  }
+  
+  .container {
+    min-width: 800px;
+  }
+  
+  .content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .basic-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .first-field {
+    margin-right: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  

@@ -12,11 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { BasicCalcComponent } from './basic-calc/basic-calc.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTabsModule } from '@angular/material/tabs';
+import { StreamCalcComponent } from './stream-calc/stream-calc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicCalcComponent
+    BasicCalcComponent,
+    StreamCalcComponent
   ],
   imports: [
     BrowserModule,
