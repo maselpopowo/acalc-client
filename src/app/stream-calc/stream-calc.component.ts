@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Result } from '../basic-calc/result';
 import { StreamCalcService } from './stream-calc.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class StreamCalcComponent implements OnInit {
 
   name = new FormControl();
 
-  result: number = 0;
+  result: Result = {value: ''};
 
   constructor(private service: StreamCalcService) { }
 
@@ -19,7 +20,10 @@ export class StreamCalcComponent implements OnInit {
   }
 
   add() {
-    this.service.add(this.name.value).subscribe((value: number) => this.result = value);
+    this.service.add(this.name.value).subscribe((value: Result) => {
+      this.result = value;
+      this.name.reset();
+    });
   }
 
 }
